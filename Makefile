@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 23:06:56 by ljerinec          #+#    #+#              #
-#    Updated: 2022/11/26 06:21:54 by ljerinec         ###   ########.fr        #
+#    Updated: 2022/11/30 17:38:01 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME) 
 
 $(NAME): $(OBJECTS)
-	$(AR) -rc $@ $?
+	AR -rc $@ $?
+
+%.o:  %.c
+	$(CC) -c $(CFLAGS) $?
 
 clean:
 	rm -f $(OBJECTS) $(BONUS)

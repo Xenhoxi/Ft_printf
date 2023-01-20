@@ -6,12 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:59:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/11/26 22:53:35 by ljerinec         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:24:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-// #include <stdio.h>
+#include <stdio.h>
 
 void	check_arg(va_list param, const char *format, int *size)
 {
@@ -34,6 +34,8 @@ void	check_arg(va_list param, const char *format, int *size)
 	}
 	else if (*format == 'x' || *format == 'X')
 		ft_putnbr_hexa(va_arg(param, unsigned int), *format, size);
+	else
+		ft_putchar(*format, size);
 }
 
 int	ft_printf(const char *format, ...)
@@ -49,7 +51,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 			check_arg(param, &format[++i], &size);
-		else
+		else if (format[i] != '%')
 			ft_putchar(format[i], &size);
 		if (size == -1)
 			return (size);
@@ -57,9 +59,3 @@ int	ft_printf(const char *format, ...)
 	va_end(param);
 	return (size);
 }
-
-// int main ()
-// {
-// 	printf("%d", ft_printf(" NULL %s NULL ", NULL));
-// 	return(0);
-// }
