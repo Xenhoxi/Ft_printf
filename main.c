@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:53:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/12/13 16:07:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/07/05 14:55:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(void)
 {
-	ft_printf("%s %%%%%", "TEST");
+	ft_printf("%s %%%%% ygg", "TEST");
 	printf("\n");
-	printf("%s %%%%%", "TEST");
+	printf("%s %%%%% ygg", "TEST");
+	printf("\n");
 	return (0);
 }
